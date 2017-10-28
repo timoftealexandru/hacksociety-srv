@@ -7,7 +7,7 @@ from flask import send_file
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-from camera import VideoCamera
+#from camera import VideoCamera
 
 cred = credentials.Certificate("firebase.json")
 firebase = firebase_admin.initialize_app(cred, {
