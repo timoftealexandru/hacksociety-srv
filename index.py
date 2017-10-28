@@ -14,11 +14,20 @@ firebase = firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://hacksociety-rpi.firebaseio.com'
 })
 
+def getTemperatureRange():
+    ref=db.reference('temperatureRange')
+    return ref.get()
+
+def motionDetected(flag):
+    ref = db.reference('motion')
+    ref.update({
+       'motionDetected': flag
+    })
 
 @app.route('/', methods=['GET'])
-def hello_world():
+def index():
     ref = db.reference('data')
-    print(ref.get())
+    getTemperatureRange()
     return Response(json.dumps(ref.get()), 200)
 
 @app.route('/image', methods=['GET'])
@@ -36,6 +45,7 @@ def gen(camera):
 def video_feed():
     return Response(gen(VideoCamera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000 ,debug=False)
