@@ -17,7 +17,7 @@ import sys
 sys.path.append(os.getcwd())
 import face_recognition
 
-pictures = [{'file' : 'notme.jpg', 'name' : 'Cristi'},{'file' : 'me2.jpg', 'name' : 'Tudor'},{'file' : 'me.jpg', 'name' : 'Tudor'}]
+pictures = [{'file' : 'notme.jpg', 'name' : 'Cristi'},{'file' : 'me2.jpg', 'name' : 'Tudor'},{'file' : 'me.jpg', 'name' : 'Tudor'},{'file' : 'nicu.jpg', 'name' : 'Nicu'},{'file' : 'adi.jpg', 'name' : 'Adrian'}]
 
 @app.route('/', methods=['GET'])
 def index():
