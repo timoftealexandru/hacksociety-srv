@@ -1,0 +1,157 @@
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ae125/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ae125.dir/build.make CMakeFiles/cmTC_ae125.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae125.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_ae125.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:16: fatal error: io.h: No such file or directory
+ #include <io.h>
+                ^
+compilation terminated.
+CMakeFiles/cmTC_ae125.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ae125.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ae125.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ae125/fast' failed
+make: *** [cmTC_ae125/fast] Error 2
+
+
+Determining if the function jbg_newlen exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_422f5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_422f5.dir/build.make CMakeFiles/cmTC_422f5.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_422f5.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=jbg_newlen -O3 -DNDEBUG   -o CMakeFiles/cmTC_422f5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.7/Modules/CheckFunctionExists.c
+/usr/share/cmake-3.7/Modules/CheckFunctionExists.c:7:3: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   CHECK_FUNCTION_EXISTS();
+   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_422f5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_422f5.dir/link.txt --verbose=1
+/usr/bin/cc     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=jbg_newlen -O3 -DNDEBUG    CMakeFiles/cmTC_422f5.dir/CheckFunctionExists.c.o  -o cmTC_422f5 -rdynamic 
+CMakeFiles/cmTC_422f5.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup.main+0xc): undefined reference to `jbg_newlen'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_422f5.dir/build.make:97: recipe for target 'cmTC_422f5' failed
+make[1]: *** [cmTC_422f5] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_422f5/fast' failed
+make: *** [cmTC_422f5/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_18514/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18514.dir/build.make CMakeFiles/cmTC_18514.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18514.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_18514.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:28: fatal error: linux/videodev.h: No such file or directory
+ #include <linux/videodev.h>
+                            ^
+compilation terminated.
+CMakeFiles/cmTC_18514.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_18514.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_18514.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_18514/fast' failed
+make: *** [cmTC_18514/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a1b5c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a1b5c.dir/build.make CMakeFiles/cmTC_a1b5c.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1b5c.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_a1b5c.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:25: fatal error: sys/videoio.h: No such file or directory
+ #include <sys/videoio.h>
+                         ^
+compilation terminated.
+CMakeFiles/cmTC_a1b5c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a1b5c.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a1b5c.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a1b5c/fast' failed
+make: *** [cmTC_a1b5c/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_53b09/fast"
+/usr/bin/make -f CMakeFiles/cmTC_53b09.dir/build.make CMakeFiles/cmTC_53b09.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53b09.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_53b09.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:29: fatal error: ffmpeg/avformat.h: No such file or directory
+ #include <ffmpeg/avformat.h>
+                             ^
+compilation terminated.
+CMakeFiles/cmTC_53b09.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_53b09.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_53b09.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_53b09/fast' failed
+make: *** [cmTC_53b09/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_009fc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_009fc.dir/build.make CMakeFiles/cmTC_009fc.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_009fc.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_009fc.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:28: fatal error: linux/videodev.h: No such file or directory
+ #include <linux/videodev.h>
+                            ^
+compilation terminated.
+CMakeFiles/cmTC_009fc.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_009fc.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_009fc.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_009fc/fast' failed
+make: *** [cmTC_009fc/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_70d43/fast"
+/usr/bin/make -f CMakeFiles/cmTC_70d43.dir/build.make CMakeFiles/cmTC_70d43.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_70d43.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_70d43.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:25: fatal error: sys/videoio.h: No such file or directory
+ #include <sys/videoio.h>
+                         ^
+compilation terminated.
+CMakeFiles/cmTC_70d43.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_70d43.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_70d43.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_70d43/fast' failed
+make: *** [cmTC_70d43/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0ee8b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0ee8b.dir/build.make CMakeFiles/cmTC_0ee8b.dir/build
+make[1]: Entering directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0ee8b.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_0ee8b.dir/CheckIncludeFile.c.o   -c /home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:29: fatal error: ffmpeg/avformat.h: No such file or directory
+ #include <ffmpeg/avformat.h>
+                             ^
+compilation terminated.
+CMakeFiles/cmTC_0ee8b.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0ee8b.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0ee8b.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/pi/hacksociety-srv/opencv-3.1.0/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0ee8b/fast' failed
+make: *** [cmTC_0ee8b/fast] Error 2
+
+

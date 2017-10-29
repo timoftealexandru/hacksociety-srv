@@ -7,6 +7,17 @@ from flask import send_file
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+import time
+from multiprocessing import Process, Value
+import subprocess
+import random
+import os
+import sys
+sys.path.append(os.getcwd())
+import motionmodule
+import cameramodule
+import tiltModule
+import buzzModule
 #from camera import VideoCamera
 
 cred = credentials.Certificate("firebase.json")
@@ -32,8 +43,8 @@ def index():
 
 @app.route('/image', methods=['GET'])
 def get_image():
-    filename = 'img.jpg'
-    return send_file(filename, mimetype='image/gif')
+    cam = cameramodule.cameramodule()
+    return send_file(cam.takePicture(), mimetype='image/gif')
 
 def gen(camera):
     while True:
@@ -46,6 +57,43 @@ def video_feed():
     return Response(gen(VideoCamera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/startVideo', methods=['GET'])
+def startVideo():
+    return str(os.system("sudo service motion start"))
+
+@app.route('/stopVideo', methods=['GET'])
+def stopVideo():
+    return str(os.system("sudo service motion stop"))
+
+def generateRandomTemp():
+    ref = db.reference('temperature')
+    nr = random.randint(18,22)
+    ref.update({
+       'current': nr
+    })
+    
+def updateTilt():
+    t = tiltModule.tilt()
+    value = t.getValue()
+    ref = db.reference('tilt')
+    ref.update({
+        'value': value
+    })
+    if (value == 1):
+        b = buzzModule.buzz()
+        b.start()
+        time.sleep(1)
+        b.stop()
+
+def runLoop():
+    while True:
+        m = motionmodule.motion()
+        motionDetected(m.getValue())
+        generateRandomTemp()
+        updateTilt()
 
 if __name__ == '__main__':
+    p = Process(target=runLoop)
+    p.start()
     app.run(host='0.0.0.0', port=5000 ,debug=False)
+    p.join()
