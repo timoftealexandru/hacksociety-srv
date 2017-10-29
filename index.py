@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask import send_from_directory
 from flask.wrappers import Response
 import json
 app = Flask(__name__)
@@ -20,7 +21,7 @@ import tiltModule
 import buzzModule
 import temperatureModule
 import rgbLedModule
-#from camera import VideoCamera
+from camera import VideoCamera
 
 cred = credentials.Certificate("firebase.json")
 firebase = firebase_admin.initialize_app(cred, {
@@ -46,7 +47,11 @@ def index():
 @app.route('/image', methods=['GET'])
 def get_image():
     cam = cameramodule.cameramodule()
-    return send_file(cam.takePicture(), mimetype='image/gif')
+    return send_file("img.jpg", mimetype='image/gif')
+
+@app.route('/base/<filename>', methods=['GET'])
+def base_static(filename):
+    return send_from_directory(app.root_path + '/', "img.jpg")
 
 def gen(camera):
     while True:
@@ -112,10 +117,12 @@ def updateTilt():
 
 def runLoopTemp():
     while True:
+        pass
         updateTemp()
 
 def runLoop():
     while True:
+        pass
         updateTemp()
         m = motionmodule.motion()
         motionDetected(m.getValue())
