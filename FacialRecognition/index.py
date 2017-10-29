@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask import send_from_directory
 from flask.wrappers import Response
 import json
 app = Flask(__name__)
@@ -14,11 +15,15 @@ import random
 import os
 import sys
 sys.path.append(os.getcwd())
-import face_recognition
+#import face_recognition
 
 @app.route('/', methods=['GET'])
 def index():
     return Response("good", 200)
+
+@app.route('/base/<filename>', methods=['GET'])
+def getStaticImage(filename):
+    return send_from_directory(app.root_path + '/', filename)
 
 @app.route('/compare', methods=['GET'])
 def stopVideo():
