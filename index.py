@@ -18,6 +18,8 @@ import motionmodule
 import cameramodule
 import tiltModule
 import buzzModule
+import temperatureModule
+import rgbLedModule
 #from camera import VideoCamera
 
 cred = credentials.Certificate("firebase.json")
@@ -64,13 +66,36 @@ def startVideo():
 @app.route('/stopVideo', methods=['GET'])
 def stopVideo():
     return str(os.system("sudo service motion stop"))
-
-def generateRandomTemp():
+    
+def updateTemp():
+    print("TEMP")
+    on = 'g'
     ref = db.reference('temperature')
-    nr = random.randint(18,22)
+    t = temperatureModule.temperature()
+    temp = t.getTemperatureFormatted()
     ref.update({
-       'current': nr
+       'current': temp
     })
+    rng = getTemperatureRange()
+    rgb = rgbLedModule.rgbModule()
+    if (float(temp) < rng['min']):
+        print("b")
+        if (on != 'b'):
+            rgb.turnOffLed(on)
+        rgb.turnOnLed('b')
+        on = 'b'
+    elif (float(temp) >= rng['min'] and float(temp) < rng['max']):
+        print("g")
+        if (on != 'g'):
+            rgb.turnOffLed(on)
+        rgb.turnOnLed('g')
+        on = 'g'
+    else:
+        print("r")
+        if (on != 'r'):
+            rgb.turnOffLed(on)
+        rgb.turnOnLed('r')
+        on = 'r'
     
 def updateTilt():
     t = tiltModule.tilt()
@@ -85,15 +110,22 @@ def updateTilt():
         time.sleep(1)
         b.stop()
 
+def runLoopTemp():
+    while True:
+        updateTemp()
+
 def runLoop():
     while True:
+        updateTemp()
         m = motionmodule.motion()
         motionDetected(m.getValue())
-        generateRandomTemp()
         updateTilt()
 
 if __name__ == '__main__':
     p = Process(target=runLoop)
+    p2 = Process(target=runLoopTemp)
     p.start()
+    p2.start()
     app.run(host='0.0.0.0', port=5000 ,debug=False)
     p.join()
+    p2.join()

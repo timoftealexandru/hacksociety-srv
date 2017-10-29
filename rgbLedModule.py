@@ -1,39 +1,35 @@
 import time  
 import RPi.GPIO as GPIO
 
-GPIO.setwarnings(False)
+class rgbModule():
+    def __init__(self):
+        GPIO.setwarnings(False)
 
-GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BOARD)
+        self.red = 29
+        self.green = 31
+        self.blue = 33
 
-red = -1
-green = -1
-blue = -1
+        GPIO.setup(self.red, GPIO.OUT) #setup all the pins  
+        GPIO.setup(self.green, GPIO.OUT)  
+        GPIO.setup(self.blue, GPIO.OUT)
 
-RED = 0
-GREEN = 0
-BLUE = 0
-leds = {'r' : RED, 'g' : GREEN, 'b' : BLUE}
+        self.Freq = 100 #Hz  
 
-def Initialize(r,g,b):
-	#set the pins of red, green and blue
-	red = r
-	green = g
-	blue = b
-	
-	GPIO.setup(red, GPIO.OUT) #setup all the pins  
-	GPIO.setup(green, GPIO.OUT)  
-	GPIO.setup(blue, GPIO.OUT)
+        self.RED = GPIO.PWM(self.red, self.Freq)
+        self.GREEN = GPIO.PWM(self.green, self.Freq)
+        self.BLUE = GPIO.PWM(self.blue, self.Freq)
 
-	Freq = 100 #Hz  
+        self.RED.start(0)
+        self.GREEN.start(0)
+        self.BLUE.start(0)
+        self.leds={'b':self.RED, 'r':self.GREEN, 'g':self.BLUE}
 
-	RED = GPIO.PWM(red, Freq)
-	GREEN = GPIO.PWM(green, Freq)
-	BLUE = GPIO.PWM(blue, Freq)
-
-def startLed(led):
-	leds[led].start()
-	leds[led].ChangeDutyCycle(100)
-	
-def stopLed(led):
-	leds[led].stop()
+    def turnOnLed(self,led):
+        self.leds[led].start(0)
+        self.leds[led].ChangeDutyCycle(100)
+        time.sleep(5)
+        
+    def turnOffLed(self,led):
+        self.leds[led].stop()
 
